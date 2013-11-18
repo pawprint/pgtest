@@ -5,7 +5,7 @@
 </head>
 <body>
 <script id="home-tpl" type="text/x-handlebars-template">
-    <div class='header'><h1>Test App</h1></div>
+    <div class='header'><a href='#server' class="button header-button header-button-left">Server</a><h1>Test App</h1></div>
     <div class='search-bar'><input class='search-key' type="search"/></div>
     <div class="scroll"><ul class='employee-list'></ul></div>
 </script>
@@ -32,6 +32,11 @@
     </div>
 </script>
 
+<script id="server-tpl" type="text/x-handlebars-template">
+    <div class='header'><a href='#' class="button header-button header-button-left">Back</a><h1>Server Data</h1></div>
+    <div class='serverResult'></div>
+</script>
+
 <script src="phonegap.js"></script>
 <script src="lib/handlebars.js"></script>
 <script src="lib/jquery-1.8.2.min.js"></script>
@@ -40,6 +45,7 @@
 
 <script src="js/homeview.js"></script>
 <script src="js/employeeview.js"></script>
+<script src="js/serverview.js"></script>
 <script src="js/main.js"></script>
 
 </body>

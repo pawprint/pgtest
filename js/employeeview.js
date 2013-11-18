@@ -9,7 +9,7 @@ var EmployeeView = function(employee) {
         this.el.html(EmployeeView.template(employee));
         return this;
     };
-    
+
     this.addLocation = function(event) {
         event.preventDefault();
         console.log('addLocation');
@@ -24,7 +24,6 @@ var EmployeeView = function(employee) {
     };
 
     this.initialize();
-
  }
 
 EmployeeView.template = Handlebars.compile($("#employee-tpl").html());

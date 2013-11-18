@@ -6,6 +6,7 @@ var app = {
             alert(title ? (title + ": " + message) : message);
         }
     },
+    
     route: function() {
         var hash = window.location.hash;
         if (!hash) {
@@ -17,6 +18,11 @@ var app = {
             this.store.findById(Number(match[1]), function(employee) {
                 $('body').html(new EmployeeView(employee).render().el);
             });
+        }else{
+          match = hash.match(app.serverURL);
+          if (match) {
+              $('body').html(new ServerView().render().el);
+          }
         }
     },
 
@@ -49,6 +55,7 @@ var app = {
         var self = this;
 
         this.detailsURL = /^#employees\/(\d{1,})/;
+        this.serverURL = /^#server/;
 
         this.registerEvents();
         this.store = new MemoryStore(function() {
