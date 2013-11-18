@@ -5,7 +5,6 @@
         versionCode = "10"
         version     = "1.1.0">
 
-<gap:platform name="ios" />
 <gap:platform name="android" />
 
     <name>Employee Directory</name>
@@ -17,6 +16,9 @@
     <author href="http://pawprint.net" email="scott@pawprint.net">
         Scott Baker
     </author>
+
+    <icon src="icon.png" />
+    <gap:splash src="splash.png" width="320" height="320" />
 
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/contacts"/>
