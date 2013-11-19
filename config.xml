@@ -5,8 +5,6 @@
         versionCode = "10"
         version     = "2.0.0">
 
-    <preference name="phonegap-version" />
-
     <name>pgFeature Tester</name>
 
     <description>
