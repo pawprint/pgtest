@@ -37,6 +37,10 @@
     <gap:platform name="android" />
     <gap:platform name="ios" />
 
+    <preference name="phonegap-version" value="3.0.0" />
+    <preference name="show-splash-screen-spinner" value="true" />
+
+    <feature name="http://api.phonegap.com/1.0/device"/>
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
