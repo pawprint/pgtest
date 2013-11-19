@@ -64,5 +64,5 @@ var app = {
     }
 
 };
-window.WeinreServerURL = "http://debug.build.phonegap.com";
+
 app.initialize();

@@ -1,9 +1,11 @@
 var ServerView = function() {
 
     this.scanCode = function() {
-      if(this.scanner){
+      try {
+        var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+        app.showAlert('scanner loaded');
         $('.serverResult').append('<strong>Attempt Scan</strong><br />');
-        this.scanner.scan(
+        scanner.scan(
           function (result) {
               app.showAlert("We got a barcode\n" +
                     "Result: " + result.text + "\n" +
@@ -14,21 +16,17 @@ var ServerView = function() {
               app.showAlert("Scanning failed: " + error);
           }
         );
-      }else{
-        $('.serverResult').append('<strong>Scanner Unsupported</strong><br />');
       }
+      catch(e) {
+        app.showAlert('scanner could not be loaded');
+      }
+
+
       return false;
     };
 
     this.initialize = function() {
       this.el = $('<div/>');
-      try {
-        this.scanner = cordova.require("cordova/plugin/BarcodeScanner");
-        app.showAlert('scanner loaded');
-      }
-      catch(e) {
-        app.showAlert('scanner could not be loaded');
-      }
     };
 
     this.render = function() {
