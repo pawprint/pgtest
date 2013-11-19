@@ -17,7 +17,11 @@
     </author>
 
     <icon src="icon.png" />
-    <gap:splash src="splash.png" />
+    
+    <gap:splash src="splash_xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash src="splash_hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="splash_mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="splash_ldpi.png" gap:platform="android" gap:density="ldpi" />
 
     <gap:platform name="android" />
 
