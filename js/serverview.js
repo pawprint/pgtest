@@ -9,8 +9,20 @@ var ServerView = function() {
             if(!result.cancelled){
               $('.serverResult').append('<strong>Scan Returned</strong><br />')
                                 .append('Result: ' + result.text+'<br />')
-                                .append('Format: ' + result.text+'<br />')
-                                .append('Result: ' + result.format+'<br />');
+                                .append('Format: ' + result.format+'<br />');
+
+
+              $.ajax({
+                  url:'http://www.pawprint.ca/inpost.php',
+                  type:'post',
+                  data:'url='+result.text,
+                  success:function(data){
+                    $('.serverResult').append(data+'<br />');
+                  },
+                  error:function(w,t,f){
+                    $('.serverResult').append('<strong>Error: '+w+' '+t+' '+f+'</strong>');
+                  }
+                });
             }else{
               $('.serverResult').append('<strong>Scan Canceled</strong><br />');
             }
@@ -30,10 +42,6 @@ var ServerView = function() {
 
     this.initialize = function() {
       this.el = $('<div/>');
-    };
-
-    this.render = function() {
-      this.el.html(ServerView.template());
 
       $.ajax({
           url:'http://www.pawprint.ca/inpost.php',
@@ -46,6 +54,10 @@ var ServerView = function() {
             $('.serverResult').append('<strong>Error: '+w+' '+t+' '+f+'</strong>');
           }
         });
+    };
+
+    this.render = function() {
+      this.el.html(ServerView.template());
       $('.serverResult',this.el).append('<em>Initalized</em><br />');
       $('.scanBC',this.el).on('click',this.scanCode).html('Scan');
 
