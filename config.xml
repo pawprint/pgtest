@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "net.pawprint.pgFeatureTest"
         versionCode = "10"
-        version     = "1.9.0">
+        version     = "1.9.1">
 
 
     <name>pgFeature Tester</name>

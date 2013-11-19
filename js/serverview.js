@@ -33,7 +33,7 @@ var ServerView = function() {
         );
       }
       catch(e) {
-        app.showAlert('scanner could not be loaded');
+        app.showAlert('Scanner Failed:'+e.message);
       }
 
 
