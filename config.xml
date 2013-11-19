@@ -3,13 +3,13 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "org.coenraets.employeedirectory"
         versionCode = "10"
-        version     = "1.8.10">
+        version     = "1.9.0">
 
 
-    <name>Employee Directory</name>
+    <name>pgFeature Tester</name>
 
     <description>
-        A simple employee directory application
+        Application to test Phone Gap Features
     </description>
 
     <author href="http://pawprint.net" email="scott@pawprint.net">
@@ -17,7 +17,7 @@
     </author>
 
     <icon src="icon.png" />
-    <gap:splash src="splash.png" width="640" height="960" />
+    <gap:splash src="splash.png" />
 
     <gap:platform name="android" />
 

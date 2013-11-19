@@ -3,14 +3,17 @@ var ServerView = function() {
     this.scanCode = function() {
       try {
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-        app.showAlert('scanner loaded');
-        $('.serverResult').append('<strong>Attempt Scan</strong><br />');
+        $('.serverResult').append('scanner loaded<br />');
         scanner.scan(
           function (result) {
-              app.showAlert("We got a barcode\n" +
-                    "Result: " + result.text + "\n" +
-                    "Format: " + result.format + "\n" +
-                    "Cancelled: " + result.cancelled);
+            if(!result.cancelled){
+              $('.serverResult').append('<strong>Scan Returned</strong><br />')
+                                .append('Result: ' + result.text+'<br />')
+                                .append('Format: ' + result.text+'<br />')
+                                .append('Result: ' + result.format+'<br />');
+            }else{
+              $('.serverResult').append('<strong>Scan Canceled</strong><br />');
+            }
           },
           function (error) {
               app.showAlert("Scanning failed: " + error);
