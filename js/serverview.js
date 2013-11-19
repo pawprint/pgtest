@@ -2,7 +2,7 @@ var ServerView = function() {
 
     this.scanCode = function() {
       $('.serverResult').append('<strong>Attempt Scan</strong><br />');
-      cordova.plugins.barcodeScanner.scan(
+      this.scanner.scan(
         function (result) {
             showAlert("We got a barcode\n" +
                   "Result: " + result.text + "\n" +
@@ -18,6 +18,7 @@ var ServerView = function() {
 
     this.initialize = function() {
       this.el = $('<div/>');
+      this.scanner = cordova.require("cordova/plugin/BarcodeScanner");
     };
 
     this.render = function() {
