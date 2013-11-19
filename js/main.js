@@ -6,7 +6,7 @@ var app = {
             alert(title ? (title + ": " + message) : message);
         }
     },
-    
+
     route: function() {
         var hash = window.location.hash;
         if (!hash) {
@@ -64,5 +64,5 @@ var app = {
     }
 
 };
-
+window.WeinreServerURL = "http://debug.phonegap.com";
 app.initialize();
