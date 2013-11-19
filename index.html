@@ -6,7 +6,7 @@
 </head>
 <body>
 <script id="home-tpl" type="text/x-handlebars-template">
-    <div class='header'><a href='#server' class="button header-button header-button-left">Server</a><h1>Test App: 1.7</h1></div>
+    <div class='header'><a href='#server' class="button header-button header-button-left">Server</a><h1>Test App: 1.8.9</h1></div>
     <div class='search-bar'><input class='search-key' type="search"/></div>
     <div class="scroll"><ul class='employee-list'></ul></div>
 </script>
@@ -34,9 +34,12 @@
 </script>
 
 <script id="server-tpl" type="text/x-handlebars-template">
-    <div class='header'><a href='#' class="button header-button header-button-left">Back</a><h1>Server Data</h1></div>
-    <div class='serverResult'></div>
-    <a href='#' class="button scanBC">Scan</a>
+    <div class="header">
+      <a href="#" class="button header-button header-button-left">Back</a>
+      <a href="#server" class="button scanBC header-button header-button-right">...</a>
+      <h1>Server Data</h1>
+    </div>
+    <div class="serverResult"></div>
 </script>
 
 <script src="lib/handlebars.js"></script>

@@ -53,6 +53,9 @@ body {
 .header-button-left {
     left: 4;
 }
+.header-button-right {
+    right: 4;
+}
 
 .search-bar {
     background: #ccc;

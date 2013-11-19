@@ -1,41 +1,43 @@
 var ServerView = function() {
-    this.initialize = function() {
-      this.el = $('<div/>');
-      $('.scanBC',this.el).on('click', this.scanCode);
-
-      $.ajax({
-        url:'http://www.pawprint.ca/inpost.php',
-        type:'post',
-        data:'go=true',
-        success:function(data){
-          $('.serverResult').html(data);
-        },
-        error:function(w,t,f){
-          $('.serverResult').html('<strong>'+w+' '+t+' '+f+'</strong>');
-        }
-      });
-      return false;
-    };
 
     this.scanCode = function() {
-      alert("Attempt Scan");
+      $('.serverResult').append('<strong>Attempt Scan</strong><br />');
       cordova.plugins.barcodeScanner.scan(
         function (result) {
-            alert("We got a barcode\n" +
+            showAlert("We got a barcode\n" +
                   "Result: " + result.text + "\n" +
                   "Format: " + result.format + "\n" +
                   "Cancelled: " + result.cancelled);
         },
         function (error) {
-            alert("Scanning failed: " + error);
+            showAlert("Scanning failed: " + error);
         }
-     );
+      );
       return false;
-    }
+    };
+
+    this.initialize = function() {
+      this.el = $('<div/>');
+    };
 
     this.render = function() {
-        this.el.html(ServerView.template());
-        return this;
+      this.el.html(ServerView.template());
+
+      $.ajax({
+          url:'http://www.pawprint.ca/inpost.php',
+          type:'post',
+          data:'go=true',
+          success:function(data){
+            $('.serverResult').append(data+'<br />');
+          },
+          error:function(w,t,f){
+            $('.serverResult').append('<strong>Error: '+w+' '+t+' '+f+'</strong>');
+          }
+        });
+      $('.serverResult',this.el).append('<em>Initalized</em><br />');
+      $('.scanBC',this.el).on('click',this.scanCode).html('Scan');
+
+      return this;
     };
 
     this.initialize();
