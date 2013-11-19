@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "org.coenraets.employeedirectory"
+        id          = "net.pawprint.pgFeatureTest"
         versionCode = "10"
         version     = "1.9.0">
 
@@ -16,14 +16,27 @@
         Scott Baker
     </author>
 
-    <icon src="icon.png" />
-    
+    <icon src="icon.png" width="512" height="512" />
+    <icon src="icon96.png" width="96" height="96" />
+    <icon src="icon72.png" width="72" height="72" />
+    <icon src="icon48.png" width="48" height="48" />
+    <icon src="icon36.png" width="36" height="36" />
+
     <gap:splash src="splash_xhdpi.png" gap:platform="android" gap:density="xhdpi" />
     <gap:splash src="splash_hdpi.png" gap:platform="android" gap:density="hdpi" />
     <gap:splash src="splash_mdpi.png" gap:platform="android" gap:density="mdpi" />
     <gap:splash src="splash_ldpi.png" gap:platform="android" gap:density="ldpi" />
 
+    <gap:splash src="splash_ios.png" gap:platform="ios" width="320" height="480" />
+    <gap:splash src="splash_ios_2x.png" gap:platform="ios" width="640" height="960" />
+    <gap:splash src="splash_ios_5.png" gap:platform="ios" width="640" height="1136" />
+    <gap:splash src="splash_ios_tab_land.png" gap:platform="ios" width="1024" height="748" />
+    <gap:splash src="splash_ios_tab_port.png" gap:platform="ios" width="768" height="1004" />
+    <gap:splash src="splash_ios_tab_land_2x.png" gap:platform="ios" width="2048" height="1496" />
+    <gap:splash src="splash_ios_tab_port_2x.png" gap:platform="ios" width="1536" height="2008" />
+
     <gap:platform name="android" />
+    <gap:platform name="ios" />
 
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/contacts"/>
